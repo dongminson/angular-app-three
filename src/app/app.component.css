@@ -1,0 +1,29 @@
+.background {
+    background-image: linear-gradient(#673ab7, #512da8);
+    min-height: 100vh;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+.card {
+    max-width: 500px;
+    width: 500px;
+    margin: 0px 5px 20px 5px;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.full-width {
+    width: 100%;
+}
+.input {
+    margin: 15px 5px 15px 5px;
+}

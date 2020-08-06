@@ -1,0 +1,34 @@
+<div>
+    <mat-card class="card">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Title</mat-label>
+            <input [disabled]="!edit || bookmark.protected " class="input" [(ngModel)]="bookmark.title" matInput>
+        </mat-form-field>
+        <div class="full-width">
+            <mat-checkbox [disabled]="!edit || bookmark.protected" [(ngModel)]="bookmark.protected">Protected</mat-checkbox>
+        </div>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>URL</mat-label>
+            <input [disabled]="!edit || bookmark.protected" class="input" [(ngModel)]="bookmark.url" matInput>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea [disabled]="!edit || bookmark.protected" class="input" [(ngModel)]="bookmark.description" matInput></textarea>
+        </mat-form-field>
+        <mat-card-actions>
+            <span *ngIf="!edit; else elseBlock">
+                <button [disabled]="bookmark.protected" (click)="onToggleEdit()" mat-icon-button color="primary">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </span>
+            <ng-template #elseBlock>
+                <button [disabled]="bookmark.protected" (click)="onEdit()" mat-icon-button color="secondary">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </ng-template>
+            <button [disabled]="bookmark.protected" (click)="onDelete(bookmark.id)" mat-icon-button color="primary">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
